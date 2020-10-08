@@ -34,104 +34,115 @@
 @import 'share_credential';
 @import 'settings';
 @import 'searchboxexpander';
-
-.app-passman{
-  overflow-x: hidden;
+.app-passman {
+    overflow-x: hidden;
 }
 
-.template-hidden{
-  display: none !important;
+.template-hidden {
+    display: none !important;
 }
 
 .hide-animation {
-  display: inherit !important;
-  transition: ease-in-out .15s;
+    display: inherit !important;
+    transition: ease-in-out .15s;
 }
+
 .hide-animation.ng-hide {
-  opacity: 0;
+    opacity: 0;
 }
 
-
-.ui-dialog{
-  z-index: 9999;
+.ui-dialog {
+    z-index: 9999;
 }
-#notification{
-  .row{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
+
+#notification {
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
 }
 
 #app-content #app-content-wrapper #passman-controls {
-  border-bottom: 1px solid #c9c9c9;
+    border-bottom: 1px solid var(--color-border);
 }
 
 #passman-controls {
-  box-sizing: border-box;
-  position: fixed;
-  margin: -45px 0 0;
-  right: 0;
-  left: 0;
-  border-bottom: 1px solid #c9c9c9;
-  padding: 0 !important;
-  background-color: rgba(255, 255, 255, .95);
-  z-index: 50;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    box-sizing: border-box;
+    position: fixed;
+    margin: -45px 0 0;
+    right: 0;
+    left: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding: 0 !important;
+    z-index: 50;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 44px !important;
+    .breadcrumb {
+        //Move Homeicon to the right to prevent overlap with burgermenu
+        @media only screen and (max-width: 769px) {
+            padding-left: 15px;
+        }
+        .addCredential {
+            padding-top: 1px;
+        }
+    }
+}
 
-  height: 44px !important;
-  .breadcrumb{
-    //Move Homeicon to the right to prevent overlap with burgermenu
-    @media only screen and (max-width: 769px) {
-      padding-left: 15px;
+@media only screen and (max-width: 768px) {
+    #passman-controls {
+        width: 100%;
     }
-    .addCredential{
-      padding-top: 1px;
+}
+
+@media only screen and (min-width: 768px) {
+    #app-navigation+#app-content #passman-controls {
+        left: 300px;
+        width: calc( 100% - 300px) !important;
     }
-  }
 }
-@media only screen and (max-width: 768px){
-  #passman-controls{
-    width: 100%;
-  }
+
+#passman-controls .button,
+#passman-controls,
+#passman-controls input[type='submit'],
+#passman-controls input[type='text'],
+#passman-controls input[type='password'],
+#passman-controls select {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 36px;
+    padding: 7px 10px;
 }
-@media only screen and (min-width: 768px){
-  #app-navigation+#app-content #passman-controls {
-    left: 300px;
-    width: calc( 100% - 300px ) !important;
-  }
+
+.nopadding {
+    padding-right: 0;
+    padding-left: 0;
 }
-#passman-controls .button,  #passman-controls, #passman-controls input[type='submit'],  #passman-controls input[type='text'],  #passman-controls input[type='password'],  #passman-controls select {
-  box-sizing: border-box;
-  display: inline-block;
-  height: 36px;
-  padding: 7px 10px;
+
+.clearfix {
+    clear: both;
 }
-.nopadding{
-  padding-right: 0;
-  padding-left: 0;
-}
-.clearfix{
-  clear: both;
-}
+
 //Fix NC fucking up our style
-input[type="checkbox"]{
-  min-height: inherit;
-}
-.alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-.alert-danger {
-  color: #a94442;
-  background-color: #f2dede;
-  border-color: #ebccd1;
+input[type="checkbox"] {
+    min-height: inherit;
 }
 
-.ui-button.ui-widget{
-  min-height: unset !important;
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.ui-button.ui-widget {
+    min-height: unset !important;
 }
